@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Share &amp; Learn</string>
+    <string name="emailHint"> Username or Email </string>
+    <string name="passHint"> Password </string>
+    <string name="log"> LOG IN </string>
+    <string name="google">LOG IN WITH GOOGLE</string>
+    <string name="facebook">LOG IN WITH FACEBOOK</string>
+    <string name="sign_up">Sign up</string>
+    <string name="don_t_have_an_account">Don\'t Have An Account?</string>
+    <string name="or">OR</string>
+    <string name="login_with_google">LOGIN WITH GOOGLE</string>
+    <string name="CreateNewPost">Create New post</string>
+    <string name="spin">Select Tag</string>
+
+    <string-array name="items">
+        <item>Choose a tag...</item>
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+        <item>Item 4</item>
+        <item>Item 5</item>
+    </string-array>
+</resources>
