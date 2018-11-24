@@ -49,6 +49,7 @@ public class Homepage extends AppCompatActivity {
         ListUserView = findViewById(R.id.ListUserViewID);
         continueReading = findViewById(R.id.continueReadingid);
 
+
         mAuth=FirebaseAuth.getInstance();
 
         signoutButton.setOnClickListener(new View.OnClickListener() {
