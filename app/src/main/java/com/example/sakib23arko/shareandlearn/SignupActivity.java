@@ -72,8 +72,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                 progressBarSignup.setVisibility(View.GONE);
                 if(task.isSuccessful()){
                     Toast.makeText(getApplicationContext(),"Signup completed",Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(SignupActivity.this,MainActivity.class));
-
+                    startActivity(new Intent(SignupActivity.this,Homepage.class));
                 }
                 else if(task.getException() instanceof FirebaseAuthUserCollisionException) {
                     Toast.makeText(getApplicationContext(), "This email is already registered", Toast.LENGTH_LONG).show();

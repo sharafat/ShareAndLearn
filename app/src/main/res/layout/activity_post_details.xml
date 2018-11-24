@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
-    android:orientation="vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.sakib23arko.shareandlearn.PostDetails">
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,43 +67,24 @@
                     android:text="Time"
                     />
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/InfoID"
-                    android:text="Some Information about the project"
-                    />
-                <TextView
-                    android:id="@+id/continueReadingid"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Continue Reading."
-                    android:textAlignment="viewEnd"
-                    android:textColor="#496aff"
-
-                    />
-            </LinearLayout>
-
-
         </LinearLayout>
-
     </LinearLayout>
 
-    <View
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="5dp"
-        android:background="#77867e"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         >
 
-    </View>
+        <TextView
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/InformationID"
+            android:justificationMode="inter_word"
 
+            android:text="Some Information aboutsajhdkaj shdkjhjashdkjhaskjdhkajsh djkahsjdhkashkjdh askjdhkjsahkjdhaksjhdkjashdj the project"
+            />
 
+    </LinearLayout>
 </LinearLayout>

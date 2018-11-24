@@ -30,13 +30,31 @@ public class UserList extends ArrayAdapter<infoOfUser> {
 
         TextView textViewTitle = ListViewItems.findViewById(R.id.ProjectTitleID);
         TextView textViewDescription = ListViewItems.findViewById(R.id.InfoID);
-        TextView textViewUserName = ListViewItems.findViewById(R.id.UserID);
         TextView textViewDateTime = ListViewItems.findViewById(R.id.TimeID);
 
         infoOfUser user = userlist.get(position);
 
-        textViewTitle.setText(user.getTitle());
-        textViewDescription.setText(user.getDescription());
+        String TitleName300 = user.getTitle();
+        String Description400 = user.getDescription();
+
+        String ShowTitle = "";
+        String ShowDescription = "";
+
+        for(int i = 0 ; i < Math.min(200, TitleName300.length()) ; i++) {
+            ShowTitle += TitleName300.charAt(i);
+        }
+        if(TitleName300.length() > 200) ShowTitle += "...";
+
+
+
+        for(int i = 0 ; i < Math.min(300, Description400.length()) ; i++) {
+            ShowDescription += Description400.charAt(i);
+        }
+        if(Description400.length() > 300) ShowDescription += "...";
+
+
+        textViewTitle.setText(ShowTitle);
+        textViewDescription.setText(ShowDescription);
         textViewDateTime.setText(user.getDateTime());
 
         return ListViewItems;

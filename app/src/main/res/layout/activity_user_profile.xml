@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sakib23arko.shareandlearn.userProfile"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/userImageViewId"
+            android:layout_marginTop="80dp"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/rahat"/>
+
+        <ProgressBar
+            android:id="@+id/progressBarUserProfileImageId"
+            android:layout_marginTop="110dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:id="@+id/addChangePhotoId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add or change photo"
+        android:textAllCaps="false"
+        android:textColor="#0c52c1"/>
+    <EditText
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:id="@+id/userNameProfileId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter user name"/>
+    <Button
+        android:layout_gravity="center"
+        android:id="@+id/saveUserProfileId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:background="#070e3b"
+        android:text="SAVE"/>
+
+
+</LinearLayout>

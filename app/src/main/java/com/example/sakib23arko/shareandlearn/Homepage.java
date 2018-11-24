@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
@@ -22,10 +24,11 @@ import java.util.ArrayList;
 
 public class Homepage extends AppCompatActivity {
 
-    private Button button;
+    private Button button,myProfileButton;
     ArrayList<infoOfUser> userlist ;
     ListView ListUserView;
     Bundle bundle;
+    TextView continueReading;
     DatabaseReference userDatabase;
 
     @Override
@@ -35,9 +38,35 @@ public class Homepage extends AppCompatActivity {
         userDatabase = FirebaseDatabase.getInstance().getReference("USER");
 
 
+        myProfileButton = findViewById(R.id.myProfileButtonId);
         button = findViewById(R.id.CreateNewPostID);
         userlist = new ArrayList<>();
         ListUserView = findViewById(R.id.ListUserViewID);
+        continueReading = findViewById(R.id.continueReadingid);
+
+
+        ListUserView.setOnItemClickListener( new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long id) {
+                Toast.makeText(Homepage.this, "sdakdas", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Homepage.this, PostDetails.class);
+                //Get the value of the item you clicked
+
+                infoOfUser itemClicked = userlist.get(position);
+                intent.putExtra("Title", itemClicked.getTitle());
+                intent.putExtra("Timee", itemClicked.getDateTime());
+                intent.putExtra("Description", itemClicked.getDescription());
+                startActivity(intent);
+
+            }
+        });
+
+        myProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Homepage.this,userProfile.class));
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,21 +80,15 @@ public class Homepage extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Toast.makeText(Homepage.this, "WOW", Toast.LENGTH_LONG).show();
         userDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 userlist.clear();
-                int counter = 0;
                 for(DataSnapshot X : dataSnapshot.getChildren()) {
-                    userlist.add(X.getValue(infoOfUser.class));
-                     counter++;
-                     Toast.makeText(Homepage.this, "WasdasdOW" + counter , Toast.LENGTH_SHORT).show();
+                    userlist.add(0, X.getValue(infoOfUser.class));
                 }
-//
                 UserList adapter = new UserList(Homepage.this, userlist);
                 ListUserView.setAdapter(adapter);
-//
             }
 
             @Override
@@ -73,5 +96,6 @@ public class Homepage extends AppCompatActivity {
 
             }
         });
+
     }
 }

@@ -40,9 +40,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         loginGoogleButton.setOnClickListener(this);
         loginFacebookButton.setOnClickListener(this);
-
         signinButton.setOnClickListener(this);
         loginButton.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(mAuth.getCurrentUser()!=null)
+        {
+            finish();
+            startActivity(new Intent(MainActivity.this,Homepage.class));
+        }
     }
 
     private void userLogin()
@@ -81,9 +90,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 progressBarLogin.setVisibility(View.GONE);
                 if(task.isSuccessful()){
                     Toast.makeText(getApplicationContext(),"Login is successful",Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(MainActivity.this,Homepage.class);
-
-                    startActivity(intent);
+                    finish();
+                    startActivity(new Intent(MainActivity.this,Homepage.class));
                 }
                 else{
                     Toast.makeText(getApplicationContext(),task.getException().getMessage(),Toast.LENGTH_LONG).show();
@@ -98,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             userLogin();
         }
         if (v.getId()==R.id.signupButtonId){
+            finish();
             startActivity(new Intent(MainActivity.this,SignupActivity.class));
         }
         if(v.getId()==R.id.loginGoogleId){
