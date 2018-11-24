@@ -20,6 +20,7 @@ import java.util.Calendar;
 public class CreateNewPost extends AppCompatActivity {
 
 
+
     private Button Post;
     private EditText Title;
     private EditText Description;

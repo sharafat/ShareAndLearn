@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class UserList extends ArrayAdapter<infoOfUser> {
 
     private Activity context;

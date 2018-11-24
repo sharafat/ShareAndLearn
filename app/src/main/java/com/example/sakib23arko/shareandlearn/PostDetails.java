@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+
 public class PostDetails extends AppCompatActivity {
 
     TextView PostTitle, PostTime, Postdetails;

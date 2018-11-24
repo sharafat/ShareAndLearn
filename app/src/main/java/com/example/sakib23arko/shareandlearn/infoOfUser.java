@@ -1,6 +1,7 @@
 package com.example.sakib23arko.shareandlearn;
 
 public class infoOfUser {
+
     String title;
     String description;
     String tag;

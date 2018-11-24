@@ -21,7 +21,6 @@
         android:textSize="15sp"
 
         android:backgroundTint="#000000"
-
         android:textStyle="bold" />
 
     <EditText

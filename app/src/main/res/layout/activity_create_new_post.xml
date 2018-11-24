@@ -15,6 +15,7 @@
         android:text="Add title :"
         android:textSize="20sp"
         android:textStyle="bold"
+
         />
 
     <EditText

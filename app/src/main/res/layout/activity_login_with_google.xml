@@ -15,6 +15,5 @@
         android:text="@string/login_with_google"
         android:textSize="50sp"
         android:textStyle="bold"
-
         />
 </LinearLayout>
