@@ -137,7 +137,20 @@ public class userProfile extends AppCompatActivity implements View.OnClickListen
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             progressBarUserProfileImage.setVisibility(View.GONE);
-                            profileImageUrl= taskSnapshot.getMetadata().getReference().getDownloadUrl().toString();
+                            taskSnapshot.getMetadata().getReference().getDownloadUrl()
+                                    .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                        @Override
+                                        public void onSuccess(Uri uri) {
+                                            profileImageUrl = uri.toString();
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            progressBarUserProfileImage.setVisibility(View.GONE);
+                                            Toast.makeText(userProfile.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                                        }
+                                    });
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
